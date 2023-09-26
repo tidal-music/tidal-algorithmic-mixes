@@ -28,10 +28,10 @@ jobs:
       - name: Install dependencies
         run: poetry install --no-root
 
-#      - name: Build package
-#        run: python3 -m build
-#
-#      - name: Publish distribution to PyPI
-#        uses: pypa/gh-action-pypi-publish@release/v1
-#        with:
-#          password: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Build package
+        run: python3 -m build
+
+      - name: Publish distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
