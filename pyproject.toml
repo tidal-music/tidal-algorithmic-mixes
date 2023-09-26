@@ -1,0 +1,53 @@
+[project]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: Apache License V 2.0",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"GitHub" = "https://github.com/tidal-music/tidal-algorithmic-mixes"
+
+[tool.poetry]
+name = "tidal_algorithmic_mixes"
+version = "0.0.1"
+description = "common transformers used by the tidal personalization team."
+authors = [
+    "Loay <loay@squareup.com>",
+    "Jing <jxie@squareup.com>",
+    "Tao <tma@squareup.com>",
+    "Thomas <talmenningen@squareup.com>",
+    "Yuhua yuhua@squareup.com"
+]
+
+license = "Apache License V 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8.0"
+pyspark = "3.4.0"
+numpy = ">=1.16.4"
+s3fs = "2022.11.0"
+boto3 = "1.24.59"
+pandas = ">=1.4.2"
+great-expectations = "0.16.15"
+scikit-learn = "1.1.1"
+alphabet-detector = "0.0.7"
+pyarrow = "7.0.0"
+tidal-per-transformers = "0.0.4"
+torch = "1.9.1"
+mlflow = "2.1.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "6.1.2"
+coverage = ">=4.5.2"
+pytest-cov = ">=2.6.1"
+coveralls = ">=1.6.0"
+mock = ">=2.0.0"
+moto = ">=3.1.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
