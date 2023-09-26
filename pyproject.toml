@@ -11,7 +11,7 @@ classifiers = [
 
 [tool.poetry]
 name = "tidal_algorithmic_mixes"
-version = "0.0.2"
+version = "0.0.3"
 description = "common transformers used by the tidal personalization team."
 authors = [
     "Loay <loay@squareup.com>",
@@ -26,7 +26,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.8.0"
-pyspark = "3.4.0"
+pyspark = ">=3.3.0,<=3.4.0"
 numpy = ">=1.16.4"
 s3fs = "2022.11.0"
 boto3 = "1.24.59"
