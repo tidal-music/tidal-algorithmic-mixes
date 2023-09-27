@@ -47,7 +47,7 @@ class ObservedDiscoveryMixTracksAggregatorTest(PySparkTest):
         runner._data = ObservedDiscoveryMixTracksAggregatorTransformationData(observed_mixes=observed_mixes,
                                                                               mixes=mixes)
         runner.transform()
-        res = runner.output.output
+        res = runner.output.df
 
         self.assertEqual(res.columns,  [c.USER, c.TRACK_GROUP])
         self.assertEqual(res.count(), len(tracks_user_1) + len(tracks_user_2))
