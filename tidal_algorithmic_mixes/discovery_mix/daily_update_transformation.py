@@ -18,13 +18,13 @@ class DiscoveryMixDailyUpdateTransformationData:
 
 @dataclass
 class DiscoveryMixDailyUpdateTransformationOutput:
-    output: DataFrame
+    df: DataFrame
 
 
 class DiscoveryMixDailyUpdateTransformationConfig(Config):
     def __init__(self, **kwargs):
         self.current_date = kwargs.get('current_date')
-        self.mix_size = int(kwargs.get('mix_size', 70))
+        self.mix_size = int(kwargs.get('mix_size', 10))
         Config.__init__(self, **kwargs)
 
 
@@ -60,7 +60,7 @@ class DiscoveryMixDailyUpdateTransformation(ETLModel):
                                      self.config.mix_size)
                          .withColumn(c.UPDATED, F.lit(mix_utils.updated(time.time())))
                          .where(F.size(c.TRACKS) >= self.config.mix_size - 2))
-        self._output = DiscoveryMixDailyUpdateTransformationOutput(output=discovery_mix)
+        self._output = DiscoveryMixDailyUpdateTransformationOutput(discovery_mix)
 
     def slicer(self, mixes: DataFrame, current_date: date, mix_size: int) -> DataFrame:
         """ Extract the tracks of the day from the weekly computed list """

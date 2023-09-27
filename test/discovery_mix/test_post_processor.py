@@ -136,6 +136,6 @@ class DiscoveryMixPostProcessorTest(PySparkTest):
                                                                               min_mix_size=0)
         post_processor._data = self.data
         post_processor.transform()
-        res = post_processor.output.output.collect()[0]
+        res = post_processor.output.df.collect()[0]
         self.assertEqual(Row(user=1, tracks=['xxx'], mixId='1f1451b3b417516e9e4b4423958', atDate=res.atDate),
                          res)

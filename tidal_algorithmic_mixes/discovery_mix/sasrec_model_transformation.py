@@ -2,6 +2,7 @@ import abc
 from dataclasses import dataclass
 
 from mlflow.pyfunc.spark_model_cache import SparkModelCache
+# noinspection PyProtectedMember
 from mlflow.tracking.artifact_utils import _download_artifact_from_uri
 from mlflow.utils.file_utils import TempDir
 import numpy as np
@@ -25,7 +26,7 @@ class DiscoveryMixSasRecModelTransformationData:
 
 @dataclass
 class DiscoveryMixSasRecModelTransformationOutput:
-    output: DataFrame
+    df: DataFrame
 
 
 class DiscoveryMixSasRecModelTransformationConfig(Config):
