@@ -47,7 +47,7 @@ class DiscoveryMixPostProcessorTransformationData:
 
 @dataclass
 class DiscoveryMixPostProcessorTransformationOutput:
-    output: DataFrame
+    df: DataFrame
 
 
 class DiscoveryMixPostProcessorTransformationConfig(Config):

@@ -18,7 +18,7 @@ class ObservedDiscoveryMixTracksAggregatorTransformationData:
 
 @dataclass
 class ObservedDiscoveryMixTracksAggregatorTransformationOutput:
-    output: DataFrame
+    df: DataFrame
 
 
 class ObservedDiscoveryMixTracksAggregatorTransformation(ETLModel):
