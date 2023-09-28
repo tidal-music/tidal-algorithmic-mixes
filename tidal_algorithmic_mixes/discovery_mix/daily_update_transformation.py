@@ -23,7 +23,7 @@ class DiscoveryMixDailyUpdateTransformationOutput:
 
 class DiscoveryMixDailyUpdateTransformationConfig(Config):
     def __init__(self, **kwargs):
-        self.current_date = kwargs.get('current_date')
+        self.current_date = kwargs.get('current_date', date.today())
         self.mix_size = int(kwargs.get('mix_size', 10))
         Config.__init__(self, **kwargs)
 
