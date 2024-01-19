@@ -11,14 +11,13 @@ classifiers = [
 
 [tool.poetry]
 name = "tidal_algorithmic_mixes"
-version = "0.0.7"
+version = "0.0.8"
 description = "common transformers used by the tidal personalization team."
 authors = [
     "Loay <loay@squareup.com>",
-    "Jing <jxie@squareup.com>",
     "Tao <tma@squareup.com>",
     "Thomas <talmenningen@squareup.com>",
-    "Yuhua yuhua@squareup.com"
+    "Yuhua <yuhua@squareup.com>"
 ]
 
 license = "Apache License V 2.0"
@@ -35,7 +34,7 @@ great-expectations = "0.16.15"
 scikit-learn = "1.1.1"
 alphabet-detector = "0.0.7"
 pyarrow = "7.0.0"
-tidal-per-transformers = ">=0.0.7"
+tidal-per-transformers = ">=0.0.8"
 torch = "1.12.1"
 mlflow = "2.1.1"
 

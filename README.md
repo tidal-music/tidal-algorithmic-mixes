@@ -12,6 +12,7 @@ and non-personalized like track radio and artist radio.
 - Set local pyenv version `pyenv local mixes`
 - Activate the virtual pyenv using `pyenv activate mixes`
 - Upgrade the pip package installer `pip install --upgrade pip`
-- Install poetry for package management `pip install poetry==1.5.1`
+- Install poetry for package management `pip install poetry==1.7.0`
 - Install dependencies from the lock file `poetry install --no-root` 
 
+[pyproject.toml](pyproject.toml)[pyproject.toml](pyproject.toml)
