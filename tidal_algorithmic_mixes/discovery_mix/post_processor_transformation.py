@@ -2,9 +2,9 @@ import abc
 from datetime import datetime
 
 import pyspark.sql.functions as F
-from pyspark.ml import Pipeline
 from tidal_per_transformers.transformers import WithColumnRenamedTransformer, JoinTransformer, CleanTextTransformer, \
     TrackGroupAvailabilityByCountryTransformer, TopItemsTransformer, AggregateTransformer, SelectTransformer
+from tidal_per_transformers.transformers.single_dag_pipeline import SingleDAGPipeline as Pipeline
 
 import tidal_algorithmic_mixes.utils.constants as c
 
@@ -143,7 +143,7 @@ class DiscoveryMixPostProcessorTransformation(ETLModel):
             DiscoveryMixSortTransformer(self.conf.mix_size, sort_column=c.RANK),
             DiscoveryMixOutputTransformer(self.conf.now, sort_column=c.RANK, min_mix_size=self.conf.min_mix_size)
         ])
-        output = pipeline.fit(self.data.precomputed_recs).transform(self.data.precomputed_recs).persist()
+        output = pipeline.fit(self.data.precomputed_recs).persist()
         self._output = DiscoveryMixPostProcessorTransformationOutput(output)
 
     @staticmethod
@@ -156,7 +156,7 @@ class DiscoveryMixPostProcessorTransformation(ETLModel):
         user_country_pipeline = Pipeline(stages=[
             SelectTransformer([c.ID, c.COUNTRY_CODE]),
             WithColumnRenamedTransformer(c.ID, c.USER_ID)])
-        return user_country_pipeline.fit(user_table).transform(user_table)
+        return user_country_pipeline.fit(user_table)
 
     @staticmethod
     def get_track_group_metadata(tracks_metadata: DataFrame):
@@ -170,7 +170,7 @@ class DiscoveryMixPostProcessorTransformation(ETLModel):
                                  [F.first(c.MAIN_ARTISTS_IDS).getItem(0).alias(c.ARTIST_ID),
                                   F.first(c.TITLE).alias(c.TITLE)]),
         ])
-        return track_group_artist_pipeline.fit(tracks_metadata).transform(tracks_metadata)
+        return track_group_artist_pipeline.fit(tracks_metadata)
 
     @staticmethod
     def get_track_group_available_countries(track_group_metadata: DataFrame):
