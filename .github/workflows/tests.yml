@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: '3.12'
 
     - name: Check out code
       uses: actions/checkout@v2
@@ -25,7 +25,7 @@ jobs:
       run: python -m pip install --upgrade pip
 
     - name: Install poetry
-      run: pip install poetry==1.5.1
+      run: pip install poetry==1.7.1
 
     - name: Install dependencies
       run: poetry install --no-root
