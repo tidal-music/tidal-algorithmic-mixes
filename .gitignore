@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 /.python-version
 *.pyc
+/poetry.lock
