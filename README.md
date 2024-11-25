@@ -14,5 +14,3 @@ and non-personalized like track radio and artist radio.
 - Upgrade the pip package installer `python -m pip install --upgrade pip`
 - Install poetry for package management `python -m pip install poetry==1.7.1`
 - Install dependencies from the lock file `poetry install --no-root` 
-
-[pyproject.toml](pyproject.toml)[pyproject.toml](pyproject.toml)
