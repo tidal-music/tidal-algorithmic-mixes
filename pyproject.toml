@@ -1,27 +1,15 @@
-[project]
-requires-python = ">=3.10"
-name = "tidal_algorithmic_mixes"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: Apache License V 2.0",
-    "Operating System :: OS Independent",
-]
-
-[project.urls]
-"GitHub" = "https://github.com/tidal-music/tidal-algorithmic-mixes"
-
 [tool.poetry]
 name = "tidal_algorithmic_mixes"
 version = "0.1.5"
-description = "common transformers used by the tidal personalization team."
+description = "Common transformers used by the Tidal personalization team."
 authors = [
     "Loay <loay@squareup.com>",
     "Tao <tma@squareup.com>",
     "Thomas <talmenningen@squareup.com>"
 ]
-
-license = "Apache License V 2.0"
+license = "Apache-2.0"
 readme = "README.md"
+homepage = "https://github.com/tidal-music/tidal-algorithmic-mixes"
 
 [tool.poetry.dependencies]
 python = ">=3.10.13"
@@ -47,7 +35,6 @@ mock = ">=2.0.0"
 moto = ">=3.1.11"
 setuptools  = ">=69.1.1"
 
-
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
