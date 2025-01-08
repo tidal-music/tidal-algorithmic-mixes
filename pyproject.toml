@@ -1,5 +1,6 @@
 [project]
 requires-python = ">=3.10"
+name = "tidal_algorithmic_mixes"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: Apache License V 2.0",
