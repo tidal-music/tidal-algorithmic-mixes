@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tidal_algorithmic_mixes"
-version = "0.1.5"
+version = "0.1.6"
 description = "Common transformers used by the Tidal personalization team."
 authors = [
     "Loay <loay@squareup.com>",
@@ -22,7 +22,7 @@ great-expectations = "0.16.15"
 scikit-learn = "1.4.0"
 alphabet-detector = "0.0.7"
 pyarrow = "8.0.0"
-tidal-per-transformers = "0.3.1"
+tidal-per-transformers = >=0.3.1"
 torch = "2.2.1"
 mlflow = "2.9.2"
 
