@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "tidal_algorithmic_mixes"
 version = "0.1.6"
-description = "Algorithic mixes developed by the tidal personalization team."
+description = "Algorithic mixes developed by the TIDAL personalization team."
 authors = [
     "Loay <loay@squareup.com>",
     "Tao <tma@squareup.com>",
